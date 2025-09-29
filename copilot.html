@@ -169,4 +169,37 @@ console.log(saludar("Lautaro"));
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </body>
+
+<!-- Botón flotante para alternar modo oscuro -->
+<button id="darkModeToggle" title="Alternar modo oscuro">
+  <i class="bi bi-moon"></i>
+</button>
+
+<script>
+  // Alternar modo oscuro manualmente
+  const toggleBtn = document.getElementById('darkModeToggle');
+  const body = document.body;
+  // Guardar preferencia en localStorage
+  function setDarkMode(on) {
+    if (on) {
+      body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'on');
+      toggleBtn.innerHTML = '<i class="bi bi-brightness-high"></i>';
+      toggleBtn.title = 'Cambiar a modo claro';
+    } else {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('darkMode', 'off');
+      toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
+      toggleBtn.title = 'Cambiar a modo oscuro';
+    }
+  }
+  // Leer preferencia al cargar
+  if (localStorage.getItem('darkMode') === 'on') {
+    setDarkMode(true);
+  } else {
+    setDarkMode(false);
+  }
+  toggleBtn.onclick = () => setDarkMode(!body.classList.contains('dark-mode'));
+</script>
+</body>
 </html>
