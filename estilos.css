@@ -1,3 +1,16 @@
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #fff !important;
+}
+
+.dark-mode h1::after,
+.dark-mode h2::after {
+  background-color: #375a7f !important;
+}
 /* estilos.css - Estilo visual mejorado para el sitio IA */
 
 /* ====== VARIABLES DE COLOR ====== */
@@ -136,5 +149,74 @@ footer {
 
 main.container {
   animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ====== MODO OSCURO ====== */
+body.dark-mode {
+  background-color: #181a1b !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode main.container,
+.dark-mode .bg-light {
+  background-color: #23272b !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .navbar,
+.dark-mode footer {
+  background-color: #111315 !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .shadow,
+.dark-mode .rounded {
+  box-shadow: 0 0 10px #0008 !important;
+}
+
+.dark-mode .form-control,
+.dark-mode textarea {
+  background-color: #23272b !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+.dark-mode .form-label {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .btn-primary {
+  background-color: #375a7f !important;
+  border-color: #375a7f !important;
+}
+
+.dark-mode pre,
+.dark-mode code {
+  background-color: #23272b !important;
+  color: #e0e0e0 !important;
+}
+
+/* Botón flotante para alternar modo */
+#darkModeToggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  background: #23272b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 2px 8px #0006;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#darkModeToggle:hover {
+  background: #375a7f;
 }
  
